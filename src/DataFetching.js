@@ -7,7 +7,6 @@ import Card from "@material-ui/core/Card";
 import CardContent from '@material-ui/core/CardContent';
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
 
 function DataFetching() {
   const API_key = "5e80a10989314afca9801137201102";
@@ -28,7 +27,7 @@ function DataFetching() {
   useEffect(() => {
     axios
       .get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${API_key}&q=${zip}&days=7`
+        `https://api.weatherapi.com/v1/forecast.json?key=${API_key}&q=${zip}&days=7`
       )
       .then(res => {
         setDays(res.data.forecast.forecastday);
